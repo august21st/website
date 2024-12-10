@@ -1,0 +1,139 @@
+:root {
+	--primary-red: #8B0000;
+	--gold-gradient-start: #FFD700;
+	--gold-gradient-end: #DAA520;
+	--background-black: #1A1A1A;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "Arial", sans-serif;
+	background-color: var(--background-black);
+	color: white;
+	line-height: 1.6;
+	overflow: hidden auto;
+}
+
+header {
+	display: flex;
+	flex-direction: column;
+	row-gap: 8px;
+}
+
+/* Parallax Hero Banner */
+.hero-banner {
+	position: relative;
+	height: 100vh;
+	overflow: hidden;
+	perspective: 1px;
+}
+
+.hero-banner::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-image: url('assets/cover.png');
+	background-size: cover;
+	background-position: center;
+	transform: translateZ(-1px) scale(2);
+	z-index: -1;
+	filter: brightness(0.5) contrast(1.2);
+}
+
+.hero-content {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+	z-index: 1;
+}
+
+/* Crazy Slanted Sections */
+.section {
+	position: relative;
+	padding: 100px 50px;
+	background: linear-gradient(135deg, var(--primary-red), black);
+	transform: skew(-10deg);
+	margin: 50px 0;
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.section-content {
+	transform: skew(10deg);
+}
+
+/* Navigation */
+header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	background: rgba(0, 0, 0, 0.7);
+	z-index: 1;
+	padding: 16px 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.nav {
+	display: flex;
+	justify-content: center;
+}
+
+.nav a {
+	color: white;
+	text-decoration: none;
+	margin: 0 15px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	transition: color 0.3s ease;
+}
+
+.nav a:hover {
+	color: var(--gold-gradient-start);
+}
+
+/* Chaos Button */
+.chaos-button {
+	background: linear-gradient(45deg, var(--gold-gradient-start), var(--gold-gradient-end));
+	color: var(--primary-red);
+	padding: 15px 30px;
+	font-size: 18px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	cursor: pointer;
+	transition: transform 0.2s, box-shadow 0.2s;
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.chaos-button:hover {
+	transform: scale(1.05) rotate(2deg);
+	box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+h1,
+h2 {
+	font-family: 'Impact', 'Arial Black', sans-serif;
+	text-transform: uppercase;
+	color: var(--gold-gradient-start);
+}
+
+.community-section {
+	background: linear-gradient(45deg, black, var(--primary-red));
+}
+
+footer {
+	padding: 8px;
+}
